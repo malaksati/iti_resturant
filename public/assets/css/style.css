@@ -109,12 +109,21 @@ a:focus {
   width: 100%;
   height: 100%;
 }
+.sub-page .bg-box {
+  height: auto;
+}
 
-.bg-box img {
+.header-index .bg-box img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+.sub-page .bg-box img {
+  width:auto;
+  height: auto;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .hero_area_sub {
@@ -126,7 +135,6 @@ a:focus {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
 }
 
 .hero_area_sub .bg-box img {

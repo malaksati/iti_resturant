@@ -1,6 +1,6 @@
 <div class="hero_area_sub ">
     <div class="bg-box">
-        <img src="{{ asset('assets/images/hero-bg.jpg') }}" alt="photo">
+        <img src="{{ asset('assets/images/hero-sub-bg.jpg') }}" alt="photo">
     </div>
     <header class="header_section">
         <div class="container">

@@ -31,17 +31,17 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            <form action="{{ url('admin/login') }}" method="post">
+              @csrf
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input name="email" type="email" class="form-control" placeholder="Enter Email" required />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input name="password" type="password" class="form-control" placeholder="Enter Password" required />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
-                <a class="reset_pass" href="#">Lost your password?</a>
+                <button class="btn btn-default submit" type="submit">Log in</button>
               </div>
 
               <div class="clearfix"></div>
@@ -65,22 +65,24 @@
 
         <div id="register" class="animate form registration_form">
           <section class="login_content">
-            <form>
+            <form action="{{ url('/admin/register') }}" method="Post">
+              @csrf
               <h1>Create Account</h1>
+              <input type="hidden" value="admin" name="role">
               <div>
-                <input type="text" class="form-control" placeholder="Fullname" required="" />
+                <input name="name" type="text" class="form-control" placeholder="Fullname" required/>
               </div>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input name="username" type="text" class="form-control" placeholder="Username" required />
               </div>
               <div>
-                <input type="email" class="form-control" placeholder="Email" required="" />
+                <input name="email" type="email" class="form-control" placeholder="Email" required />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input name="password" type="password" class="form-control" placeholder="Password" required />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Submit</a>
+                <button class="btn btn-default submit" type="submit">Submit</button>
               </div>
 
               <div class="clearfix"></div>

@@ -17,4 +17,10 @@ class RegisterController extends Controller
         User::create($data);
         return redirect('/login');
     }
+    function handle_register_admin(Request $req) {
+        $data = $req->all();
+        $data['password']= Hash::make($data['password']);
+        User::create($data);
+        return redirect('/admin/login');
+    }
 }

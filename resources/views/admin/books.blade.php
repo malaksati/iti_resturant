@@ -55,22 +55,23 @@
                                                 <tr>
                                                     <th>Book Date</th>
                                                     <th>Name</th>
+                                                    <th>Email</th>
                                                     <th>Total</th>
                                                     <th>Phone</th>
-                                                    <th>Edit</th>
                                                     <th>Delete</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($books as $book)
                                                 <tr>
-                                                    <td>1 Jan 2023</td>
-                                                    <td>Name</td>
-                                                    <td>5</td>
-                                                    <td>01254862465</td>
-                                                    <td><img src="{{asset('assets/images/edit.png')}}" alt="Edit"></td>
-                                                    <td><img src="{{asset('assets/images/delete.png')}}" alt="Delete"></td>
+                                                    <td>{{ $book->date }}</td>
+                                                    <td>{{ $book->name }}</td>
+                                                    <td>{{ $book->email }}</td>
+                                                    <td>{{ $book->total }}</td>
+                                                    <td>{{ $book->phone }}</td>
+                                                    <td><a href="{{ url('admin/books/delete',[$book->id])}}"><img src="{{asset('assets/images/delete.png')}}" alt="Delete"></a></td>
                                                 </tr>
-                                            
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>

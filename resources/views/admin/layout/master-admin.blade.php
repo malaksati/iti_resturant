@@ -40,8 +40,7 @@
             <div class="col-md-3 left_col">
                 <div class="left_col scroll-view">
                     <div class="navbar nav_title" style="border: 0;">
-                        <a href="{{url('/admin/user')}}" class="site_title"><i class="fa fa-file-image-o"></i> <span>Images
-                                Admin</span></a>
+                        <a href="{{url('/admin/user')}}" class="site_title"><i class="fa fa-file-image-o"></i> <span>Admin</span></a>
                     </div>
 
                     <div class="clearfix"></div>
@@ -49,11 +48,11 @@
                     <!-- menu profile quick info -->
                     <div class="profile clearfix">
                         <div class="profile_pic">
-                            <img src="{{asset('assets/images/img.jpg')}}" alt="..." class="img-circle profile_img">
+                            <img src="{{asset(Auth::user()->image)}}" alt="..." class="img-circle profile_img">
                         </div>
                         <div class="profile_info">
                             <span>Welcome,</span>
-                            <h2>John Doe</h2>
+                            <h2>{{Auth::user()->name}}</h2>
                         </div>
                     </div>
                     <!-- /menu profile quick info -->
@@ -81,6 +80,11 @@
                                     <ul class="nav child_menu">
                                         <li><a href="{{url('admin/item')}}">Items List</a></li>
                                         <li><a href="{{url('admin/item/add')}}">Add Item</a></li>
+                                    </ul>
+                                </li>
+                                <li><a><i class="fa fa-desktop"></i> Bookings <span class="fa fa-chevron-down"></span></a>
+                                    <ul class="nav child_menu">
+                                        <li><a href="{{url('admin/books')}}">Bookings List</a></li>
                                     </ul>
                                 </li>
                             </ul>
@@ -119,7 +123,7 @@
                             <li class="nav-item dropdown open" style="padding-left: 15px;">
                                 <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
                                     id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="{{asset('assets/images/img.jpg')}}" alt="">John Doe
+                                    <img src="{{asset(Auth::user()->image)}}" alt="">{{Auth::user()->name}}
                                 </a>
                                 <div class="dropdown-menu dropdown-usermenu pull-right"
                                     aria-labelledby="navbarDropdown">
@@ -144,10 +148,10 @@
                                     aria-labelledby="navbarDropdown1">
                                     <li class="nav-item">
                                         <a class="dropdown-item">
-                                            <span class="image"><img src="{{asset('assets/images/img.jpg')}}"
+                                            <span class="image"><img src="{{asset(Auth::user()->image)}}"
                                                     alt="Profile Image" /></span>
                                             <span>
-                                                <span>John Smith</span>
+                                                <span>{{Auth::user()->name}}</span>
                                                 <span class="time">3 mins ago</span>
                                             </span>
                                             <span class="message">

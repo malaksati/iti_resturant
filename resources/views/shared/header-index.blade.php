@@ -1,4 +1,4 @@
-<div class="hero_area">
+<div class="hero_area header-index">
     <div class="bg-box">
         <img src="{{ asset('assets/images/hero-bg.jpg') }}" alt="photo">
     </div>
@@ -134,7 +134,7 @@
                                         sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
                                     </p>
                                     <div class="btn-box">
-                                        <a href="" class="btn1">
+                                        <a href="{{url('/book')}}" class="btn1">
                                             Order Now
                                         </a>
                                     </div>
@@ -157,7 +157,7 @@
                                         sunt repellat dolore, iste magni quos nihil ducimus libero ipsam.
                                     </p>
                                     <div class="btn-box">
-                                        <a href="" class="btn1">
+                                        <a href="{{url('/book')}}" class="btn1">
                                             Order Now
                                         </a>
                                     </div>

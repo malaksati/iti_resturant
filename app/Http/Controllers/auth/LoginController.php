@@ -19,4 +19,13 @@ class LoginController extends Controller
             return redirect()->back();
         }
     }
+    function handle_login_admin(Request $req) {
+        $data = $req->all();
+        $cred = Auth::attempt(['email' => $data['email'], 'password' => $data['password']]);
+        if($cred){
+            return redirect("/admin/user");
+        }else {
+            return redirect()->back();
+        }
+    }
 }

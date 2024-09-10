@@ -22,7 +22,7 @@
                                     <h6>
                                         <span>20%</span> Off
                                     </h6>
-                                    <a href="">
+                                    <a href="{{ url('/menu') }}">
                                         Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                             viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;"
@@ -46,36 +46,6 @@
                                                     <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
                          c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
                                                 </g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
                                             </g>
                                         </svg>
                                     </a>
@@ -94,7 +64,7 @@
                                     <h6>
                                         <span>15%</span> Off
                                     </h6>
-                                    <a href="">
+                                    <a href="{{ url('/menu') }}">
                                         Order Now <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg"
                                             xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                                             viewBox="0 0 456.029 456.029" style="enable-background:new 0 0 456.029 456.029;"
@@ -118,36 +88,6 @@
                                                     <path d="M215.04,389.55c-1.024-28.16-24.576-50.688-52.736-50.688c-29.696,1.536-52.224,26.112-51.2,55.296
                          c1.024,28.16,24.064,50.688,52.224,50.688h1.024C193.536,443.31,216.576,418.734,215.04,389.55z" />
                                                 </g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
-                                            </g>
-                                            <g>
                                             </g>
                                         </svg>
                                     </a>
@@ -173,221 +113,37 @@
 
                 <ul class="filters_menu">
                     <li class="active" data-filter="*">All</li>
-                    <li data-filter=".burger">Burger</li>
-                    <li data-filter=".pizza">Pizza</li>
-                    <li data-filter=".pasta">Pasta</li>
-                    <li data-filter=".fries">Fries</li>
+                    @foreach ($tags as $tag)
+                    <li data-filter=".<?= strtolower($tag->name); ?>">{{ $tag->name }}</li>
+                    @endforeach
                 </ul>
 
                 <div class="filters-content">
                     <div class="row grid">
-                        <div class="col-sm-6 col-lg-4 all pizza">
+                        @foreach ($items as $item)
+                        <div class="col-sm-6 col-lg-4 all {{$item->tag_lower}}">
                             <div class="box">
                                 <div>
                                     <div class="img-box">
-                                        <img src="{{ asset('assets/images/f1.png')}}" alt="">
+                                        <img src="{{ asset($item->image)}}" alt="">
                                     </div>
                                     <div class="detail-box">
                                         <h5>
-                                            Delicious Pizza
+                                            {{ $item->title }}
                                         </h5>
                                         <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam
-                                            voluptatem repellendus sed eaque
+                                            {{ $item->license }}
                                         </p>
                                         <div class="options">
                                             <h6>
-                                                $20
+                                                ${{ $item->price }}
                                             </h6>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-6 col-lg-4 all burger">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="{{ asset('assets/images/f2.png')}}" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Delicious Burger
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam
-                                            voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $15
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all pizza">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="{{ asset('assets/images/f3.png')}}" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Delicious Pizza
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam
-                                            voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $17
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all pasta">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="{{ asset('assets/images/f4.png')}}" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Delicious Pasta
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam
-                                            voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $18
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all fries">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="{{ asset('assets/images/f5.png')}}" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            French Fries
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam
-                                            voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $10
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all pizza">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="{{ asset('assets/images/f6.png')}}" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Delicious Pizza
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam
-                                            voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $15
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all burger">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="{{ asset('assets/images/f7.png')}}" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Tasty Burger
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam
-                                            voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $12
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all burger">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="{{ asset('assets/images/f8.png')}}" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Tasty Burger
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam
-                                            voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $14
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-6 col-lg-4 all pasta">
-                            <div class="box">
-                                <div>
-                                    <div class="img-box">
-                                        <img src="{{ asset('assets/images/f9.png')}}" alt="">
-                                    </div>
-                                    <div class="detail-box">
-                                        <h5>
-                                            Delicious Pasta
-                                        </h5>
-                                        <p>
-                                            Veniam debitis quaerat officiis quasi cupiditate quo, quisquam velit, magnam
-                                            voluptatem repellendus sed eaque
-                                        </p>
-                                        <div class="options">
-                                            <h6>
-                                                $10
-                                            </h6>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
                 <div class="btn-box">
@@ -449,40 +205,41 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="form_container">
-                            <form action="">
+                            <form action="{{ url('/book/store') }}" method="post">
+                                @csrf
                                 <div>
-                                    <input type="text" class="form-control" placeholder="Your Name" />
+                                    <input name="name" type="text" class="form-control" placeholder="Your Name" />
                                 </div>
                                 <div>
-                                    <input type="text" class="form-control" placeholder="Phone Number" />
+                                    <input name="phone" type="text" class="form-control" placeholder="Phone Number" />
                                 </div>
                                 <div>
-                                    <input type="email" class="form-control" placeholder="Your Email" />
+                                    <input name="email" type="email" class="form-control" placeholder="Your Email" />
                                 </div>
                                 <div>
-                                    <select class="form-control nice-select wide">
-                                        <option value="" disabled selected>
+                                    <select name="total" class="form-control nice-select wide">
+                                        <option value="1" disabled selected>
                                             How many persons?
                                         </option>
-                                        <option value="">
+                                        <option value="2">
                                             2
                                         </option>
-                                        <option value="">
+                                        <option value="3">
                                             3
                                         </option>
-                                        <option value="">
+                                        <option value="4">
                                             4
                                         </option>
-                                        <option value="">
+                                        <option value="5">
                                             5
                                         </option>
                                     </select>
                                 </div>
                                 <div>
-                                    <input type="date" class="form-control">
+                                    <input name="date" type="date" class="form-control">
                                 </div>
                                 <div class="btn_box">
-                                    <button>
+                                    <button type="submit">
                                         Book Now
                                     </button>
                                 </div>

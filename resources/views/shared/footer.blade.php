@@ -31,7 +31,7 @@
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
-            <a href="" class="footer-logo">
+            <a href="{{url('/')}}" class="footer-logo">
               Feane
             </a>
             <p>

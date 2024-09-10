@@ -26,4 +26,8 @@ class Item extends Model
     {
         return $this->tag->name;
     }
+    public function getTagLowerAttribute()
+    {
+        return strtolower($this->tag->name);
+    }
 }

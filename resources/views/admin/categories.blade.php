@@ -58,11 +58,13 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($tags as $tag)
                                                 <tr>
-                                                    <td>Category</td>
-                                                    <td><a href="{{url('/admin/category/edit')}}"><img src="{{asset('assets/images/edit.png')}}" alt="Edit"></a></td>
-                                                    <td><a href="{{url('/admin/category/delete')}}"><img src="{{asset('assets/images/delete.png')}}" alt="Delete"></a></td>
+                                                    <td>{{ $tag->name }}</td>
+                                                    <td><a href="{{url('/admin/category/edit',[$tag->id])}}"><img src="{{asset('assets/images/edit.png')}}" alt="Edit"></a></td>
+                                                    <td><a href="{{url('/admin/category/delete',[$tag->id])}}"><img src="{{asset('assets/images/delete.png')}}" alt="Delete"></a></td>
                                                 </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>

@@ -56,7 +56,7 @@
                                         <span class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <input type="date" id="Item-date" required="required" class="form-control" name="date">
+                                        <input type="date" value="{{ $item->date }}" id="Item-date" required="required" class="form-control" name="date">
                                     </div>
                                 </div>
                                 <div class="item form-group">
@@ -64,7 +64,7 @@
                                             class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <input type="text" id="title" required="required" class="form-control" name="title">
+                                        <input type="text" value="{{ $item->title }}" id="title" required="required" class="form-control" name="title">
                                     </div>
                                 </div>
                                 <div class="item form-group">
@@ -72,7 +72,7 @@
                                             class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <textarea id="content" name="license" required="required" class="form-control">License</textarea>
+                                        <textarea id="content" name="license" required="required" class="form-control">{{ $item->license }}</textarea>
                                     </div>
                                 </div>
                                 <div class="item form-group">
@@ -80,7 +80,7 @@
                                             class="required">*</span>
                                     </label>
                                     <div class="col-md-6 col-sm-6 ">
-                                        <input type="number" id="price" required="required" class="form-control" name="price">
+                                        <input type="number" value="{{ $item->price }}" id="price" required="required" class="form-control" name="price">
                                     </div>
                                 </div>
                                 <div class="item form-group">
